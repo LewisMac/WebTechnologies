@@ -7,12 +7,29 @@
     <p>
       Game idea: <br>
       3D style platformer/puzzle game using multiple layers of canvas. <br>
-      Tasks to complete to verify a possible project:<br>
+      Tasks to complete to verify a possible project:
       <ul>
         <li>Ensure that Canvas can run platformer/puzzle game</li>
         <li>Ensure that Canvas can create multiple layers with good use</li>
         <li>Design level plan (3?)</li>
       </ul>
     </p>
+    <canvas id="TopLevelCanvas" width="300" height="300"></canvas>
+    <canvas id="MidLevelCanvas" width="300" height="300"></canvas>
+    <canvas id="LowLevelCanvas" width="300" height="300"></canvas>
   </body>
+
+  <script type="text/javascript">
+    const TopLevelCanvas = document.getElementById("TopLevelCanvas");
+    const MidLevelCanvas = document.getElementById("MidLevelCanvas");
+    const LowLevelCanvas = document.getElementById("LowLevelCanvas");
+
+    const ctxTop = TopLevelCanvas.getContext("2d");
+    const ctxMid = MidLevelCanvas.getContext("2d");
+    const ctxLow = LowLevelCanvas.getContext("2d");
+
+    ctxTop.fillText("Hello World", 10, 50);
+    ctxTop.fillText("Testing Layers", 10, 50);
+    ctxTop.fillText("Hope these look weird", 10, 50);
+  </script>
 </html>
