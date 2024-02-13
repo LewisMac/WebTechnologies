@@ -38,7 +38,7 @@ function StickFigure(){
     ctxTop.moveTo(beginningX, beginningY + 5)
     ctxTop.lineTo(beginningX, beginningY + 25)
     //Legs
-    if (this.moving == '1'){
+    if (this.moving == 1){
       ctxTop.lineTo(beginningX + 5, beginningY + 38)
       ctxTop.lineTo(beginningX + 3, beginningY + 45)
       ctxTop.moveTo(beginningX, beginningY + 25)
@@ -65,7 +65,10 @@ function StickFigure(){
 var drawStickFigure = function(posX, posY){
   // Draw stick figure at point of mouse click
   var stick_figure = new StickFigure();
+
   stick_figure.draw(posX, posY);
+  stick_figure_collection.pop();
+  stick_figure_collection.push(stick_figure)
 }
 
 TopLevelCanvas.onclick = function(event){
@@ -85,7 +88,7 @@ window.onload = function(){
   var height = ctxTop.canvas.height = window.innerHeight;
 
   var frameRate = 60.0;
-  var frameDelay = 1000.0/frameRate;
+  var frameDelay = 100.0/frameRate;
   setInterval(function()
   {
     update(frameDelay);
