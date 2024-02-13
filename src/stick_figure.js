@@ -34,7 +34,7 @@ window.onload = function(){
     // When the user clicks on the canvas, create stick figure
     drawStickFigure(event.x, event.y)
   }
-  beginAnimation();
+  //beginAnimation();
   //var frameRate = 60.0;
   //var frameDelay = 1000.0/frameRate;
   //setInterval(function()
