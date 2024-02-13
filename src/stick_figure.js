@@ -27,10 +27,10 @@ window.onload = function(){
   const TopLevelCanvas = document.getElementById("TopLevelCanvas");
   const ctxTop = TopLevelCanvas.getContext("TopLevelCanvas");
 
-  var width = ctxTop.canvas.width = 500;
-  var height = ctxTop.canvas.height = 500;
+  var width = ctxTop.TopLevelCanvas.width = 500;
+  var height = ctxTop.TopLevelCanvas.height = 500;
 
-  canvas.onclick = function(event){
+  TopLevelCanvas.onclick = function(event){
     // When the user clicks on the canvas, create stick figure
     drawStickFigure(event.x, event.y)
   }
