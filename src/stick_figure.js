@@ -77,6 +77,9 @@ TopLevelCanvas.onclick = function(event){
 }
 
 var update = function(delay){
+  ctxTop.fillStyle = "#FFF";
+  ctxTop.fillRect(0, 0, ctxTop.canvas.width, ctxTop.canvas.height);
+
   if (keys[39] || keys[68]) {
     // right arrow
     stick_figure_used.update()
@@ -101,7 +104,7 @@ window.onload = function(){
   var width = ctxTop.canvas.width = window.innerWidth;
   var height = ctxTop.canvas.height = window.innerHeight;
 
-  var frameRate = 600.0;
+  var frameRate = 6.0;
   var frameDelay = 1000.0/frameRate;
   setInterval(function()
   {
