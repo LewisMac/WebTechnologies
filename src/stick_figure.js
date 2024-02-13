@@ -6,7 +6,7 @@ function StickFigure(){
   this.draw = function(posX, posY){
     // Draw a circle
     ctxTop.beginPath();
-    ctxTop.arc(posX, posY, 5*this.scale, 0, Math.pi*2, true);
+    ctxTop.arc(posX, posY, 5*this.scale, 0, Math.PI*2, true);
     ctxTop.closePath();
   }
 }
