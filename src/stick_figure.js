@@ -5,9 +5,23 @@ function StickFigure(){
   this.scale = 1;
   this.draw = function(posX, posY){
     // Draw a circle
+    rect = TopLevelCanvas.getBoundingClientRect()
     ctxTop.beginPath();
-    ctxTop.arc(posX, posY, 5*this.scale, 0, Math.PI*2, true);
-    ctxTop.closePath();
+    beginningX = posX - rect.left;
+    beginningY = posY - rect.top
+    ctxTop.arc(beginningX, beginningY, 5, 0, Math.PI*2);
+    ctxTop.moveTo(beginningX, beginningY + 5)
+    ctxTop.lineTo(beginningX, beginningY + 25)
+    //Legs
+    ctxTop.lineTo(beginningX - 5, beginningY + 35)
+    ctxTop.moveTo(beginningX, beginningY + 25)
+    ctxTop.lineTo(beginningX + 5, beginningY + 35)
+    //Arms
+    ctxTop.moveTo(beginningX, beginningY + 10)
+    ctxTop.lineTo(beginningX - 5, beginningY + 25)
+    ctxTop.moveTo(beginningX, beginningY + 10)
+    ctxTop.lineTo(beginningX + 5, beginningY + 25)
+    ctxTop.stroke();
   }
 }
 
