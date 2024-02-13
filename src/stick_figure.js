@@ -25,7 +25,7 @@ var drawStickFigure = function(x,y){
 window.onload = function(){
 
   const TopLevelCanvas = document.getElementById("TopLevelCanvas");
-  const ctxTop = canvas.getContext("2d");
+  const ctxTop = TopLevelCanvas.getContext("2d");
 
   var width = ctxTop.canvas.width = 500;
   var height = ctxTop.canvas.height = 500;
