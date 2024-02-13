@@ -1,12 +1,13 @@
 TopLevelCanvas{
   position:absolute;
-  z-index: 1;
   top: 0;
   left: 0;
-}
-MidLevelCanvas{
+  border: 1px;
   z-index: 2;
 }
-LowLevelCanvas{
+MidLevelCanvas{
   z-index: 3;
+}
+LowLevelCanvas{
+  z-index: 4;
 }
