@@ -11,7 +11,7 @@ function StickFigure(){
   }
 }
 
-var drawStickFigure = function(posX, posY)){
+var drawStickFigure = function(posX, posY){
   // Draw stick figure at point of mouse click
   var stick_figure = new StickFigure();
   stick_figure.draw(posX, posY);
