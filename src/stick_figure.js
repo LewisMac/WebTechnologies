@@ -16,10 +16,12 @@ function StickFigure(){
   }
 }
 
-var drawStickFigure = function(x,y){
+var drawStickFigure = function(x,y, context){
+  context.fillStyle = "#FFF";
+  context.fillRect(0, 0, context.canvas.width, context.canvas.height);
   // Draw stick figure at point of mouse click
   var stick_figure = new StickFigure();
-  stick_figure.draw(ctxTop);
+  stick_figure.draw(context);
 }
 
 window.onload = function(){
@@ -32,7 +34,7 @@ window.onload = function(){
 
   TopLevelCanvas.onclick = function(event){
     // When the user clicks on the canvas, create stick figure
-    drawStickFigure(event.x, event.y)
+    drawStickFigure(event.x, event.y, ctxTop)
   }
   //beginAnimation();
   //var frameRate = 60.0;
