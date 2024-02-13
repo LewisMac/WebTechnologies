@@ -38,7 +38,7 @@ function StickFigure(){
     ctxTop.moveTo(beginningX, beginningY + 5)
     ctxTop.lineTo(beginningX, beginningY + 25)
     //Legs
-    if (this.moving == 1){
+    if (this.moving == 1) || (this.moving == 0){
       ctxTop.lineTo(beginningX + 5, beginningY + 38)
       ctxTop.lineTo(beginningX + 3, beginningY + 45)
       ctxTop.moveTo(beginningX, beginningY + 25)
