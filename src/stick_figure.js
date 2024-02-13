@@ -6,7 +6,7 @@ function StickFigure(){
   this.scale = 1;
   this.posX = 0;
   this.posY = 0;
-  this.moved = 0;
+  this.moving = 1;
   this.draw = function(posX, posY){
     // Draw a circle
     rect = TopLevelCanvas.getBoundingClientRect()
@@ -38,7 +38,7 @@ function StickFigure(){
     ctxTop.moveTo(beginningX, beginningY + 5)
     ctxTop.lineTo(beginningX, beginningY + 25)
     //Legs
-    if (this.moving == 1 OR this.moving == 0){
+    if (this.moving == '1'){
       ctxTop.lineTo(beginningX + 5, beginningY + 38)
       ctxTop.lineTo(beginningX + 3, beginningY + 45)
       ctxTop.moveTo(beginningX, beginningY + 25)
