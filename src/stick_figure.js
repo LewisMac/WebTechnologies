@@ -84,8 +84,8 @@ var update = function(delay){
   if (keys[37] || keys[65]) {
     // left arrow
     stick_figure_used.update()
-    }
   }
+
 }
 
 document.body.addEventListener("keydown", function (e) {
