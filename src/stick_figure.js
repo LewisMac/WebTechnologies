@@ -24,8 +24,8 @@ TopLevelCanvas.onclick = function(event){
 
 window.onload = function(){
 
-  var width = ctxTop.canvas.width = 500;
-  var height = ctxTop.canvas.height = 500;
+  var width = ctxTop.canvas.width = window.innerWidth;
+  var height = ctxTop.canvas.height = window.innerHeight;
   //beginAnimation();
   //var frameRate = 60.0;
   //var frameDelay = 1000.0/frameRate;
