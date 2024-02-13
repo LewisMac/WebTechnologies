@@ -1,6 +1,7 @@
 const TopLevelCanvas = document.getElementById("TopLevelCanvas");
 const ctxTop = TopLevelCanvas.getContext("2d");
-var stick_figure_collection = []
+var stick_figure_used;
+var keys = [];
 
 function StickFigure(){
   this.scale = 1;
@@ -67,8 +68,7 @@ var drawStickFigure = function(posX, posY){
   var stick_figure = new StickFigure();
 
   stick_figure.draw(posX, posY);
-  stick_figure_collection.pop();
-  stick_figure_collection.push(stick_figure)
+  stick_figure_used = stick_figure;
 }
 
 TopLevelCanvas.onclick = function(event){
@@ -77,18 +77,32 @@ TopLevelCanvas.onclick = function(event){
 }
 
 var update = function(delay){
-  for (var i=0; i<stick_figure_collection.length; i++){
-    stick_figure_collection[i].update();
+  if (keys[39] || keys[68]) {
+    // right arrow
+    stick_figure_used.update()
+  }
+  if (keys[37] || keys[65]) {
+    // left arrow
+    stick_figure_used.update()
+    }
   }
 }
+
+document.body.addEventListener("keydown", function (e) {
+    keys[e.keyCode] = true;
+});
+
+document.body.addEventListener("keyup", function (e) {
+    keys[e.keyCode] = false;
+});
 
 window.onload = function(){
 
   var width = ctxTop.canvas.width = window.innerWidth;
   var height = ctxTop.canvas.height = window.innerHeight;
 
-  var frameRate = 60.0;
-  var frameDelay = 100.0/frameRate;
+  var frameRate = 600.0;
+  var frameDelay = 1000.0/frameRate;
   setInterval(function()
   {
     update(frameDelay);
