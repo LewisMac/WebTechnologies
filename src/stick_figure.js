@@ -34,6 +34,7 @@ window.onload = function(){
 
   TopLevelCanvas.onclick = function(event){
     // When the user clicks on the canvas, create stick figure
+    console.log("Canvas Clicked: " + event);
     drawStickFigure(event.x, event.y, ctxTop)
   }
   //beginAnimation();
