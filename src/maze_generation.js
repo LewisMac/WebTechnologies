@@ -9,7 +9,7 @@
 // If no more sides, pop last item from array out (Go back one cell)
 // !!Recursion!!
 
-import {MazeCell} from './maze_cell.js'
+import './maze_cell.js'
 
 window.onload = function(){
 
