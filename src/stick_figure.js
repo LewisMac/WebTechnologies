@@ -1,3 +1,4 @@
+/*
 const TopLevelCanvas = document.getElementById("TopLevelCanvas");
 const ctxTop = TopLevelCanvas.getContext("2d");
 var stick_figure_used;
@@ -99,6 +100,7 @@ document.body.addEventListener("keyup", function (e) {
     keys[e.keyCode] = false;
 });
 
+
 window.onload = function(){
 
   var width = ctxTop.canvas.width = window.innerWidth;
@@ -111,3 +113,4 @@ window.onload = function(){
     update(frameDelay);
   }, frameDelay);
 }
+*/
