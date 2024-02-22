@@ -63,7 +63,7 @@ const generateCells = function(cell){
   if (forwardPath){
     // Once forward path is true (works)
     // Create a new cell and start again
-    let newCell = new Cell(newX, newY, false)
+    let newCell = new MazeCell(newX, newY, false)
     generateCells(newCell)
   } else {
     // If broken out, go back through stack until we have one which works
