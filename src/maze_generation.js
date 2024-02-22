@@ -63,6 +63,21 @@ const generateCells = function(cell){
   if (forwardPath){
     // Once forward path is true (works)
     // Create a new cell and start again
+    switch (cell.direction) {
+      case 1:
+      newX = cell.x - 1
+      break;
+      case 2:
+      newY = cell.y - 1
+      break;
+      case 3:
+      newX = cell.x + 1
+      break;
+      case 4:
+      newY = cell.y + 1
+      break;
+    }
+
     let newCell = new MazeCell(newX, newY, false)
     generateCells(newCell)
   } else {
