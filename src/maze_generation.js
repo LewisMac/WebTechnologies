@@ -21,11 +21,11 @@ window.onload = function(){
 
 const generateCells = function(cell){
 
-  var newX = 0;
-  var newY = 0;
+  var newX = cell.x_coord;
+  var newY = cell.y_coord;
   var forwardPath = false;
 
-  if(cell.x == 0 || cell.x == max_X || cell.y == 0 || cell.y == max_Y){
+  if(cell.x_coord == 0 || cell.x_coord == max_X || cell.y_coord == 0 || cell.y_coord == max_Y){
     cell.atBorder = true;
   } else {
     cell.atBorder = false;
@@ -65,16 +65,16 @@ const generateCells = function(cell){
     // Create a new cell and start again
     switch (cell.direction) {
       case 1:
-      newX = cell.x - 1;
+      newX = cell.x_coord - 1;
       break;
       case 2:
-      newY = cell.y - 1;
+      newY = cell.y_coord - 1;
       break;
       case 3:
-      newX = cell.x + 1;
+      newX = cell.x_coord + 1;
       break;
       case 4:
-      newY = cell.y + 1;
+      newY = cell.y_coord + 1;
       break;
     }
 
@@ -93,29 +93,29 @@ const checkValidDirection = function(cell){
   // Check cell would not go negative or above limit
   switch (cell.direction) {
     case 1:
-    if ((cell.x - 1) < 0){
+    if ((cell.x_coord - 1) < 0){
       return false
     }
     break;
     case 2:
-    if ((cell.y - 1) < 0){
+    if ((cell.y_coord - 1) < 0){
       return false
     }
     break;
     case 3:
-    if ((cell.x + 1) > max_X){
+    if ((cell.x_coord + 1) > max_X){
       return false
     }
     break;
     case 4:
-    if ((cell.y + 1) > max_Y){
+    if ((cell.y_coord + 1) > max_Y){
       return false
     }
     break;
   }
   // I don't want to use .forEach here to check array container
-  let foundXCell = fullCellMaze.find(priorCell => priorCell.x_coord == cell.x);
-  let foundYCell = fullCellMaze.find(priorCell => priorCell.y_coord == cell.y);
+  let foundXCell = fullCellMaze.find(priorCell => priorCell.x_coord == cell.x_coord);
+  let foundYCell = fullCellMaze.find(priorCell => priorCell.y_coord == cell.y_coord);
 
   if (foundXCell || foundYCell){
     return false
