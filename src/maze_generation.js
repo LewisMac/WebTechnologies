@@ -16,7 +16,6 @@ let max_Y = 4;
 
 window.onload = function(){
   let initialCell = new MazeCell(0,0,false);
-  console.log(InitialCell.x_coord);
   generateCells(initialCell)
 }
 
@@ -58,12 +57,14 @@ const generateCells = function(cell){
       // Redo loop
       continue;
     }
+    forwardPath = true;
   }
 
   if (forwardPath){
     // Once forward path is true (works)
     // Create a new cell and start again
-
+    let newCell = new Cell(newX, newY, false)
+    generateCells(newCell)
   } else {
     // If broken out, go back through stack until we have one which works
 
@@ -96,9 +97,15 @@ const checkValidDirection = function(cell){
       return false
     }
     break;
-    default: return false;
   }
   // I don't want to use .forEach here to check array container
+  let foundXCell = fullCellMaze.find(priorCell => priorCell.x_coord == cell.x);
+  let foundYCell = fullCellMaze.find(priorCell => priorCell.y_coord == cell.y);
+
+  if (foundXCell || foundYCell){
+    return false
+  }
+
   return true;
 }
 
