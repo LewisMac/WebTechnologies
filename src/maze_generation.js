@@ -9,10 +9,10 @@
 // If no more sides, pop last item from array out (Go back one cell)
 // !!Recursion!!
 
-let cellStack = [];
-let fullCellMaze = [];
-let max_X = 4;
-let max_Y = 4;
+var cellStack = [];
+var fullCellMaze = [];
+var max_X = 4;
+var max_Y = 4;
 
 window.onload = function(){
   let initialCell = new MazeCell(0,0,false);
@@ -21,9 +21,9 @@ window.onload = function(){
 
 const generateCells = function(cell){
 
-  let newX = 0;
-  let newY = 0;
-  let forwardPath = false;
+  var newX = 0;
+  var newY = 0;
+  var forwardPath = false;
 
   if(cell.x == 0 || cell.x == max_X || cell.y == 0 || cell.y == max_Y){
     cell.atBorder = true;
@@ -65,16 +65,16 @@ const generateCells = function(cell){
     // Create a new cell and start again
     switch (cell.direction) {
       case 1:
-      newX = cell.x - 1
+      newX = cell.x - 1;
       break;
       case 2:
-      newY = cell.y - 1
+      newY = cell.y - 1;
       break;
       case 3:
-      newX = cell.x + 1
+      newX = cell.x + 1;
       break;
       case 4:
-      newY = cell.y + 1
+      newY = cell.y + 1;
       break;
     }
 
@@ -89,7 +89,7 @@ const generateCells = function(cell){
 
 const checkValidDirection = function(cell){
   // increment the rotation count
-  cell.rotated = cell.rotated + 1;
+  cell.rotated += 1;
   // Check cell would not go negative or above limit
   switch (cell.direction) {
     case 1:
