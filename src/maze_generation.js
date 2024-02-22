@@ -32,7 +32,6 @@ const generateCells = function(cell){
   }
 
   cellStack.push(cell);
-  fullCellMaze.push(cell);
 
   // Need to randomly choose a direction to go,
   // 1 - Left
@@ -78,6 +77,8 @@ const generateCells = function(cell){
       break;
     }
 
+    fullCellMaze.push(cell);
+    
     let newCell = new MazeCell(newX, newY, false)
     generateCells(newCell)
   } else {
