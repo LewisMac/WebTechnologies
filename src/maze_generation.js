@@ -89,7 +89,7 @@ const generateCells = function(cell){
 
 const checkValidDirection = function(cell){
   // increment the rotation count
-  cell.rotated += 1;
+  cell.timesRotated += 1;
   // Check cell would not go negative or above limit
   switch (cell.direction) {
     case 1:
@@ -129,6 +129,6 @@ const rotateMovementDirection = function(cell){
   if (cell.direction == 4){
     cell.direction = 1;
   } else {
-    cell.direction = cell.direction + 1;
+    cell.direction += 1;
   }
 }
