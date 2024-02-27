@@ -52,6 +52,7 @@ const generateCells = function(cell){
 
     if (!checkValidDirection(cell)){
       // Cell direction was invalid, rotate and try again
+      console.log(cell.direction + " : " + cell.timesRotated);
       rotateMovementDirection(cell);
       // Redo loop
       continue;
@@ -78,7 +79,7 @@ const generateCells = function(cell){
     }
 
     fullCellMaze.push(cell);
-    
+
     let newCell = new MazeCell(newX, newY, false)
     generateCells(newCell)
   } else {
@@ -115,12 +116,7 @@ const checkValidDirection = function(cell){
     break;
   }
   // I don't want to use .forEach here to check array container
-  let foundXCell = fullCellMaze.find(priorCell => priorCell.x_coord == cell.x_coord);
-  let foundYCell = fullCellMaze.find(priorCell => priorCell.y_coord == cell.y_coord);
-
-  if (foundXCell || foundYCell){
-    return false
-  }
+  // Need to check if the fullCellMaze contains an object with coordinates which match
 
   return true;
 }
