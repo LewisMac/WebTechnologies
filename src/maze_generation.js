@@ -122,12 +122,9 @@ const checkValidDirection = function(cell){
   // I don't want to use .forEach here to check array container
   // Need to check if the fullCellMaze contains an object with coordinates which match
   // NOTE! If this works, make it neater
-  const found = fullCellMaze.some(oldCell => oldCell.x_coord === cell.x_coord)
-  if (!found){
-    found = fullCellMaze.some(oldCell => oldCell.y_coord === cell.y_coord)
-  }
-
-  if (found){
+  const xFound = fullCellMaze.some(oldCell => oldCell.x_coord === cell.x_coord)
+  const yFound = fullCellMaze.some(oldCell => oldCell.y_coord === cell.y_coord)
+  if (xFound || yFound){
     return false
   }
 
