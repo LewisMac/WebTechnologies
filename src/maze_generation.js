@@ -124,7 +124,7 @@ const checkValidDirection = function(cell){
   // NOTE! If this works, make it neater
   const xFound = fullCellMaze.some(oldCell => oldCell.x_coord === cell.x_coord)
   const yFound = fullCellMaze.some(oldCell => oldCell.y_coord === cell.y_coord)
-  if (xFound || yFound){
+  if (xFound && yFound){
     return false
   }
 
