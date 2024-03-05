@@ -52,9 +52,11 @@ const generateCells = function(cell){
 
     var validDirection = checkValidDirection(cell);
     console.log(validDirection);
+
+    console.log(cell.direction + " : " + cell.timesRotated + " ::: " + cell.x_coord + " : " + cell.y_coord);
+
     if (!validDirection){
       // Cell direction was invalid, rotate and try again
-      console.log(cell.direction + " : " + cell.timesRotated + " : " + cell.x_coord + " : " + cell.y_coord);
       rotateMovementDirection(cell);
       // Redo loop
       continue;
