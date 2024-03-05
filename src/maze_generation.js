@@ -15,7 +15,8 @@ var max_X = 4;
 var max_Y = 4;
 
 window.onload = function(){
-  let initialCell = new MazeCell(0,0,false);
+  let initialCell = new MazeCell(1,1,false);
+  fullCellMaze.push(initialCell);
   generateCells(initialCell)
 }
 
@@ -25,12 +26,13 @@ const generateCells = function(cell){
   var newY = cell.y_coord;
   var forwardPath = false;
 
-  if(cell.x_coord == 0 || cell.x_coord == max_X || cell.y_coord == 0 || cell.y_coord == max_Y){
+  if(newX == 1 || newX == max_X || newY == 1 || newY == max_Y){
     cell.atBorder = true;
   } else {
     cell.atBorder = false;
   }
 
+  // Add new cell to the 'Current Cell Stack'
   cellStack.push(cell);
 
   // Need to randomly choose a direction to go,
@@ -41,28 +43,32 @@ const generateCells = function(cell){
   let travelDirection = Math.floor(Math.random() * 4) + 1;
   cell.direction = travelDirection;
 
-  while (forwardPath == false) {
+  do {
     // verify this isn't invalid in some way,
     // including that it isn't going backwards
 
     if (cell.timesRotated >= 4){
       // Cell has no more space to travel, need to go back one
+      //LINKBREAK
       break;
     }
 
+    // Returns boolean as whether the direction attempting to travel is valid
     var validDirection = checkValidDirection(cell);
-    console.log(validDirection);
 
-    console.log(cell.direction + " : " + cell.timesRotated + " ::: " + cell.x_coord + " : " + cell.y_coord);
+    //console.log(cell.direction + " : " + cell.timesRotated + " ::: "
+      //+ cell.x_coord + " : " + cell.y_coord);
+    //console.log(validDirection);
 
     if (!validDirection){
       // Cell direction was invalid, rotate and try again
       rotateMovementDirection(cell);
       // Redo loop
       continue;
+    } else {
+      forwardPath = true;
     }
-    forwardPath = true;
-  }
+  } while (forwardPath == false)
 
   if (forwardPath){
     // Once forward path is true (works)
@@ -86,9 +92,10 @@ const generateCells = function(cell){
 
     let newCell = new MazeCell(newX, newY, false)
     generateCells(newCell)
+
   } else {
     // If broken out, go back through stack until we have one which works
-
+    //LINKBREAK
   }
 
 }
@@ -96,26 +103,27 @@ const generateCells = function(cell){
 const checkValidDirection = function(cell){
   // increment the rotation count
   cell.timesRotated += 1;
+
   // Check cell would not go negative or above limit
   switch (cell.direction) {
     case 1:
-    if ((cell.x_coord - 1) < 0){
-      return false
+    if ((cell.x_coord - 1) < 1){
+      return false;
     }
     break;
     case 2:
-    if ((cell.y_coord - 1) < 0){
-      return false
+    if ((cell.y_coord - 1) < 1){
+      return false;
     }
     break;
     case 3:
     if ((cell.x_coord + 1) > max_X){
-      return false
+      return false;
     }
     break;
     case 4:
     if ((cell.y_coord + 1) > max_Y){
-      return false
+      return false;
     }
     break;
   }
