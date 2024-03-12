@@ -139,10 +139,11 @@ const checkValidDirection = function(cell){
   // I don't want to use .forEach here to check array container
   // Need to check if the fullCellMaze contains an object with coordinates which match
   // NOTE! If this works, make it neater
-  const xFound = fullCellMaze.some(oldCell => oldCell.x_coord === newX);
-  const yFound = fullCellMaze.some(oldCell => oldCell.y_coord === newY);
-  if (xFound && yFound){
-    console.log("Cell Already Exists: " + newX + " : " + newY);
+  // This is wrong, this is checking if each exists, not both
+  const cellFound = fullCellMaze.some(oldCell => oldCell.x_coord === newX
+    && oldCell.y_coord === newY);
+  //const yFound = fullCellMaze.some(oldCell => oldCell.y_coord === newY);
+  if (cellFound){
     return false;
   }
 
