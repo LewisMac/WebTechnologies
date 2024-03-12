@@ -11,8 +11,8 @@
 
 var cellStack = [];
 var fullCellMaze = [];
-var max_X = 4;
-var max_Y = 4;
+var max_X = 5;
+var max_Y = 5;
 
 window.onload = function(){
   let initialCell = new MazeCell(1,1,false);
