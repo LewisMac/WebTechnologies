@@ -103,30 +103,32 @@ const generateCells = function(cell){
 const checkValidDirection = function(cell){
   // increment the rotation count
   cell.timesRotated += 1;
+  var newCellXDirection = cell.x_coord;
+  var newCellYDirection = cell.y_coord;
 
   // Check cell would not go negative or above limit
   switch (cell.direction) {
     case 1:
-    if ((cell.x_coord - 1) < 1){
-      console.log("Failed Left");
+    newCellXDirection = cell.x_coord - 1;
+    if (newCellXDirection < 1){
       return false;
     }
     break;
     case 2:
-    if ((cell.y_coord - 1) < 1){
-      console.log("Failed Up");
+    newCellYDirection = cell.y_coord - 1;
+    if (newCellYDirection < 1){
       return false;
     }
     break;
     case 3:
-    if ((cell.x_coord + 1) > max_X){
-      console.log("Failed Right");
+    newCellXDirection = cell.x_coord + 1;
+    if (newCellXDirection < 1){
       return false;
     }
     break;
-    case 4:
-    if ((cell.y_coord + 1) > max_Y){
-      console.log("Failed Down");
+    case 4
+    newCellYDirection = cell.y_coord + 1;
+    if (newCellYDirection < 1){
       return false;
     }
     break;
@@ -134,10 +136,9 @@ const checkValidDirection = function(cell){
   // I don't want to use .forEach here to check array container
   // Need to check if the fullCellMaze contains an object with coordinates which match
   // NOTE! If this works, make it neater
-  const xFound = fullCellMaze.some(oldCell => oldCell.x_coord === cell.x_coord)
-  const yFound = fullCellMaze.some(oldCell => oldCell.y_coord === cell.y_coord)
+  const xFound = fullCellMaze.some(oldCell => oldCell.x_coord === newCellXDirection)
+  const yFound = fullCellMaze.some(oldCell => oldCell.y_coord === newCellYDirection)
   if (xFound && yFound){
-    console.log("Full Cell Maze Fail: ")
     return false
   }
 
