@@ -16,25 +16,30 @@ var max_Y = 5;
 
 window.onload = function(){
   let initialCell = new MazeCell(1,1,false);
-  generateCells(initialCell);
+  addNewCellToArray(initialCell);
 }
+
+const addNewCellToArray = function(cell){
+
+  // Add new cell to the 'Current Cell Stack'
+  cellStack.push(cell);
+  fullCellMaze.push(cell);
+
+  generateCells(cell)
+}
+
 
 const generateCells = function(cell){
 
   var newX = cell.x_coord;
   var newY = cell.y_coord;
   var forwardPath = false;
-  var firstBacktrack
 
   if(newX == 1 || newX == max_X || newY == 1 || newY == max_Y){
     cell.atBorder = true;
   } else {
     cell.atBorder = false;
   }
-
-  // Add new cell to the 'Current Cell Stack'
-  cellStack.push(cell);
-  fullCellMaze.push(cell);
 
   // Need to randomly choose a direction to go,
   // 1 - Left
@@ -86,14 +91,15 @@ const generateCells = function(cell){
     }
 
     let newCell = new MazeCell(newX, newY, false);
-    generateCells(newCell);
+    addNewCellToArray(newCell);
 
   } else {
+    generateCells()
     // If broken out, go back through stack until we have one which works
     //LINKBREAK
   }
-
 }
+
 
 const checkValidDirection = function(cell){
   // increment the rotation count
