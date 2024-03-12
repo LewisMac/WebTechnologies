@@ -46,7 +46,7 @@ const generateCells = function(cell){
     // verify this isn't invalid in some way,
     // including that it isn't going backwards
 
-    if (cell.timesRotated >= 4){
+    if (cell.timesRotated > 4){
       // Cell has no more space to travel, need to go back one
       //LINKBREAK
       break;
