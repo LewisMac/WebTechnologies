@@ -16,7 +16,6 @@ var max_Y = 5;
 
 window.onload = function(){
   let initialCell = new MazeCell(1,1,false);
-  fullCellMaze.push(initialCell);
   generateCells(initialCell);
 }
 
