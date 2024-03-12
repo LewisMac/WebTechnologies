@@ -94,9 +94,10 @@ const generateCells = function(cell){
     addNewCellToArray(newCell);
 
   } else {
-    generateCells()
     // If broken out, go back through stack until we have one which works
     //LINKBREAK
+    oldCell = cellStack.pop();
+    generateCells(oldCell)
   }
 }
 
