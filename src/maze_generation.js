@@ -24,6 +24,7 @@ const generateCells = function(cell){
   var newX = cell.x_coord;
   var newY = cell.y_coord;
   var forwardPath = false;
+  var firstBacktrack
 
   if(newX == 1 || newX == max_X || newY == 1 || newY == max_Y){
     cell.atBorder = true;
@@ -33,6 +34,7 @@ const generateCells = function(cell){
 
   // Add new cell to the 'Current Cell Stack'
   cellStack.push(cell);
+  fullCellMaze.push(cell);
 
   // Need to randomly choose a direction to go,
   // 1 - Left
@@ -82,8 +84,6 @@ const generateCells = function(cell){
       newY = cell.y_coord + 1;
       break;
     }
-
-    fullCellMaze.push(cell);
 
     let newCell = new MazeCell(newX, newY, false);
     generateCells(newCell);
