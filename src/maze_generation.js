@@ -110,24 +110,28 @@ const checkValidDirection = function(cell){
     case 1:
     newX -= 1;
     if (newX < 1){
+      console.log("X Fail -");
       return false;
     }
     break;
     case 2:
     newY -= 1;
     if (newY < 1){
+      console.log("Y Fail -");
       return false;
     }
     break;
     case 3:
     newX += 1;
     if (newX > max_X){
+      console.log("X Fail +");
       return false;
     }
     break;
     case 4:
     newY += 1;
     if (newY > max_Y){
+      console.log("Y Fail +");
       return false;
     }
     break;
