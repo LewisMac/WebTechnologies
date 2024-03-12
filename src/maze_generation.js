@@ -55,10 +55,6 @@ const generateCells = function(cell){
     // Returns boolean as whether the direction attempting to travel is valid
     var validDirection = checkValidDirection(cell);
 
-    //console.log(cell.direction + " : " + cell.timesRotated + " ::: "
-      //+ cell.x_coord + " : " + cell.y_coord);
-    //console.log(validDirection);
-
     if (!validDirection){
       // Cell direction was invalid, rotate and try again
       rotateMovementDirection(cell);
@@ -110,43 +106,34 @@ const checkValidDirection = function(cell){
     case 1:
     newX -= 1;
     if (newX < 1){
-      console.log("X Fail -");
       return false;
     }
     break;
     case 2:
     newY -= 1;
     if (newY < 1){
-      console.log("Y Fail -");
       return false;
     }
     break;
     case 3:
     newX += 1;
     if (newX > max_X){
-      console.log("X Fail +");
       return false;
     }
     break;
     case 4:
     newY += 1;
     if (newY > max_Y){
-      console.log("Y Fail +");
       return false;
     }
     break;
   }
-  // I don't want to use .forEach here to check array container
-  // Need to check if the fullCellMaze contains an object with coordinates which match
-  // NOTE! If this works, make it neater
-  // This is wrong, this is checking if each exists, not both
+  //Check if the fullCellMaze contains an object with coordinates which match
   const cellFound = fullCellMaze.some(oldCell => oldCell.x_coord === newX
     && oldCell.y_coord === newY);
-  //const yFound = fullCellMaze.some(oldCell => oldCell.y_coord === newY);
   if (cellFound){
     return false;
   }
-
   return true;
 }
 
