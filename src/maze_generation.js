@@ -138,6 +138,7 @@ const checkValidDirection = function(cell){
   const xFound = fullCellMaze.some(oldCell => oldCell.x_coord === newX);
   const yFound = fullCellMaze.some(oldCell => oldCell.y_coord === newY);
   if (xFound && yFound){
+    console.log("Cell Already Exists?");
     return false;
   }
 
