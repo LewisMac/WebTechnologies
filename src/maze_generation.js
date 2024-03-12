@@ -17,7 +17,7 @@ var max_Y = 4;
 window.onload = function(){
   let initialCell = new MazeCell(1,1,false);
   fullCellMaze.push(initialCell);
-  generateCells(initialCell)
+  generateCells(initialCell);
 }
 
 const generateCells = function(cell){
@@ -90,8 +90,8 @@ const generateCells = function(cell){
 
     fullCellMaze.push(cell);
 
-    let newCell = new MazeCell(newX, newY, false)
-    generateCells(newCell)
+    let newCell = new MazeCell(newX, newY, false);
+    generateCells(newCell);
 
   } else {
     // If broken out, go back through stack until we have one which works
@@ -103,32 +103,32 @@ const generateCells = function(cell){
 const checkValidDirection = function(cell){
   // increment the rotation count
   cell.timesRotated += 1;
-  let newCellXDirection = cell.x_coord;
-  let newCellYDirection = cell.y_coord;
+  var newX = cell.x_coord;
+  var newY = cell.y_coord;
 
   // Check cell would not go negative or above limit
-  switch (cell.direction) {
+  switch(cell.direction) {
     case 1:
-    newCellXDirection -= 1;
-    if (newCellXDirection < 1){
+    newX -= 1;
+    if (newX < 1){
       return false;
     }
     break;
     case 2:
-    newCellYDirection -= 1;
-    if (newCellYDirection < 1){
+    newY -= 1;
+    if (newY < 1){
       return false;
     }
     break;
     case 3:
-    newCellXDirection += 1;
-    if (newCellXDirection < 1){
+    newX += 1;
+    if (newX < 1){
       return false;
     }
     break;
     case 4
-    newCellYDirection += 1;
-    if (newCellYDirection < 1){
+    newY += 1;
+    if (newY < 1){
       return false;
     }
     break;
@@ -136,10 +136,10 @@ const checkValidDirection = function(cell){
   // I don't want to use .forEach here to check array container
   // Need to check if the fullCellMaze contains an object with coordinates which match
   // NOTE! If this works, make it neater
-  const xFound = fullCellMaze.some(oldCell => oldCell.x_coord === newCellXDirection)
-  const yFound = fullCellMaze.some(oldCell => oldCell.y_coord === newCellYDirection)
+  const xFound = fullCellMaze.some(oldCell => oldCell.x_coord === newX);
+  const yFound = fullCellMaze.some(oldCell => oldCell.y_coord === newY);
   if (xFound && yFound){
-    return false
+    return false;
   }
 
   return true;
