@@ -103,31 +103,31 @@ const generateCells = function(cell){
 const checkValidDirection = function(cell){
   // increment the rotation count
   cell.timesRotated += 1;
-  var newCellXDirection = cell.x_coord;
-  var newCellYDirection = cell.y_coord;
+  let newCellXDirection = cell.x_coord;
+  let newCellYDirection = cell.y_coord;
 
   // Check cell would not go negative or above limit
   switch (cell.direction) {
     case 1:
-    newCellXDirection = cell.x_coord - 1;
+    newCellXDirection -= 1;
     if (newCellXDirection < 1){
       return false;
     }
     break;
     case 2:
-    newCellYDirection = cell.y_coord - 1;
+    newCellYDirection -= 1;
     if (newCellYDirection < 1){
       return false;
     }
     break;
     case 3:
-    newCellXDirection = cell.x_coord + 1;
+    newCellXDirection += 1;
     if (newCellXDirection < 1){
       return false;
     }
     break;
     case 4
-    newCellYDirection = cell.y_coord + 1;
+    newCellYDirection += 1;
     if (newCellYDirection < 1){
       return false;
     }
