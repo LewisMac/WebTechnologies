@@ -108,21 +108,25 @@ const checkValidDirection = function(cell){
   switch (cell.direction) {
     case 1:
     if ((cell.x_coord - 1) < 1){
+      console.log("Failed Left");
       return false;
     }
     break;
     case 2:
     if ((cell.y_coord - 1) < 1){
+      console.log("Failed Up");
       return false;
     }
     break;
     case 3:
     if ((cell.x_coord + 1) > max_X){
+      console.log("Failed Right");
       return false;
     }
     break;
     case 4:
     if ((cell.y_coord + 1) > max_Y){
+      console.log("Failed Down");
       return false;
     }
     break;
@@ -133,6 +137,7 @@ const checkValidDirection = function(cell){
   const xFound = fullCellMaze.some(oldCell => oldCell.x_coord === cell.x_coord)
   const yFound = fullCellMaze.some(oldCell => oldCell.y_coord === cell.y_coord)
   if (xFound && yFound){
+    console.log("Full Cell Maze Fail: ")
     return false
   }
 
