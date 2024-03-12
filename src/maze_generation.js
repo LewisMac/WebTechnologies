@@ -122,13 +122,13 @@ const checkValidDirection = function(cell){
     break;
     case 3:
     newX += 1;
-    if (newX < 1){
+    if (newX > max_X){
       return false;
     }
     break;
     case 4:
     newY += 1;
-    if (newY < 1){
+    if (newY > max_Y){
       return false;
     }
     break;
