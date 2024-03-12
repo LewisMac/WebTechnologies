@@ -126,7 +126,7 @@ const checkValidDirection = function(cell){
       return false;
     }
     break;
-    case 4
+    case 4:
     newY += 1;
     if (newY < 1){
       return false;
