@@ -9,6 +9,8 @@ onload functions for each page
 const mazeCanvas = document.getElementById("MazeCanvas");
 const ctx = mazeCanvas.getContext("2d");
 
+const minCanvasSizeSquare = 400;
+
 
 const display_MazeLoad = function (){
   /*
@@ -20,12 +22,12 @@ const display_MazeLoad = function (){
   var canvasWidth = window.innerWidth * 0.5;
   var canvasHeight = window.innerHeight * 0.75;
 
-  if (canvasWidth < 500) {
-    canvasWidth = 500;
+  if (canvasWidth < minCanvasSizeSquare) {
+    canvasWidth = minCanvasSizeSquare;
   }
 
-  if (canvasHeight < 500) {
-    canvasHeight = 500;
+  if (canvasHeight < minCanvasSizeSquare) {
+    canvasHeight = minCanvasSizeSquare;
   }
 
   ctx.canvas.width = canvasWidth;
@@ -33,4 +35,12 @@ const display_MazeLoad = function (){
 
   ctx.fillStyle = 'grey';
   ctx.fillRect(0, 0, mazeCanvas.width, mazeCanvas.height)
+
+  /*
+  use ctx.moveTo for any 'gaps'
+  use ctx.lineTo for any 'walls'
+
+  always start from the bottom left, then draw/move RIGHT-UP -> NEXT CELL
+
+  */
 }
