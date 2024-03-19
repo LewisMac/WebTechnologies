@@ -15,7 +15,7 @@ var max_X = 5;
 var max_Y = 5;
 
 window.onload = function(){
-  let initialCell = new MazeCell(1,1,false);
+  let initialCell = new MazeCell(1, 1, true, true);
   addNewCellToArray(initialCell);
 }
 
@@ -34,6 +34,8 @@ const generateCells = function(cell){
   var newX = cell.x_coord;
   var newY = cell.y_coord;
   var forwardPath = false;
+  var newRightWall = true;
+  var newBottomWall = true;
 
   if(newX == 1 || newX == max_X || newY == 1 || newY == max_Y){
     cell.atBorder = true;
@@ -78,9 +80,11 @@ const generateCells = function(cell){
     switch (cell.direction) {
       case 1:
       newX = cell.x_coord - 1;
+      newRightWall = false;
       break;
       case 2:
       newY = cell.y_coord - 1;
+      newBottomWall = false;
       break;
       case 3:
       newX = cell.x_coord + 1;
@@ -92,7 +96,7 @@ const generateCells = function(cell){
       break;
     }
 
-    let newCell = new MazeCell(newX, newY, false);
+    let newCell = new MazeCell(newX, newY, newRightWall, newBottomWall);
     addNewCellToArray(newCell);
 
   } else {
