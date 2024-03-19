@@ -11,13 +11,24 @@
 
 var cellStack = [];
 var fullCellMaze = [];
-var max_X = 5;
-var max_Y = 5;
+var max_X;
+var max_Y;
 
 window.onload = function(){
+  loadNewMaze(5,5)
+}
+
+
+const loadNewMaze = function(x, y){
+  max_X = x;
+  max_Y = y;
+
   let initialCell = new MazeCell(1, 1, true, true);
   addNewCellToArray(initialCell);
+
+  display_MazeLoad();
 }
+
 
 const addNewCellToArray = function(cell){
 
