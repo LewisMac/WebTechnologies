@@ -84,9 +84,11 @@ const generateCells = function(cell){
       break;
       case 3:
       newX = cell.x_coord + 1;
+      cell.rightWall = false;
       break;
       case 4:
       newY = cell.y_coord + 1;
+      cell.bottomWall = false;
       break;
     }
 
@@ -145,6 +147,7 @@ const checkValidDirection = function(cell){
   }
   return true;
 }
+
 
 const rotateMovementDirection = function(cell){
   // Rotate clockwise
