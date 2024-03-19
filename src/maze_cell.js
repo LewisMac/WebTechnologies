@@ -1,7 +1,7 @@
 function MazeCell(x, y, rightWall, bottomWall) {
   this.x_coord = x;
   this.y_coord = y;
-  this.visited = visited;
+  this.visited = false;
   this.atBorder = true;
   this.direction = 0;
   this.timesRotated = 0;
