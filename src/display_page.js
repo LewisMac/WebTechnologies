@@ -54,7 +54,35 @@ const display_MazeLoad = function (maze_max_X, maze_max_Y){
 
   var cellSize = calculateCellSize(maze_max_X, maze_max_Y);
 
-  console.log(cellSize);
+  //first locations
+  ctx.moveTo(10,10);
+  ctx.lineTo(mazeCanvas.width - 10, 10)
+  ctx.moveTo(10,10);
+  ctx.lineTo(10, mazeCanvas.height - 10)
+  ctx.moveTo(10,10);
+
+  //Draw maze
+  fullCellMaze.forEach((cell, i) => {
+    //Move to bottom Left
+    ctx.moveTo((cell.x_coord - 1) * cellSize, cell.y_coord * cellSize);
+
+    //Draw/Move to bottom Right
+    if (cell.bottomWall){
+      ctx.lineTo(cell.x_coord * cellSize, cell.y_coord * cellSize);
+    } else {
+      ctx.moveTo(cell.x_coord * cellSize, cell.y_coord * cellSize);
+    }
+
+    //Draw/Move to Top Right
+    if (cell.rightWall){
+      ctx.lineTo(cell.x_coord * cellSize, (cell.y_coord - 1) * cellSize);
+    } else {
+      ctx.moveTo(cell.x_coord * cellSize, (cell.y_coord - 1) * cellSize);
+    }
+  });
+
+  ctx.stroke();
+
 }
 
 
