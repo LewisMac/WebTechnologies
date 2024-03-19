@@ -26,7 +26,7 @@ const loadNewMaze = function(x, y){
   let initialCell = new MazeCell(1, 1, true, true);
   addNewCellToArray(initialCell);
 
-  display_MazeLoad();
+  display_MazeLoad(max_X, max_Y);
 }
 
 

@@ -12,7 +12,7 @@ const ctx = mazeCanvas.getContext("2d");
 const minCanvasSizeSquare = 400;
 
 
-const display_MazeLoad = function (){
+const display_MazeLoad = function (maze_max_X, maze_max_Y){
   /*
   This method is for updating the Canvas element with any new maze generated
   We need to have a calculation for scaling the maze we generate so it will
@@ -36,11 +36,30 @@ const display_MazeLoad = function (){
   ctx.fillStyle = 'grey';
   ctx.fillRect(0, 0, mazeCanvas.width, mazeCanvas.height)
 
+  ctx.fillStyle = 'black';
   /*
   use ctx.moveTo for any 'gaps'
   use ctx.lineTo for any 'walls'
 
   always start from the bottom left, then draw/move RIGHT-UP -> NEXT CELL
+  Drawable Area is (mazeCanvas.width - 20) by (mazeCanvas.height - 20)
+  Maze grid will be x*y cells
+  We need to calculate how large x/y are to fit into the grid
 
+  Correction: We need to calculate the smallest of X/Y,
+  so we can fit this into the grid
+
+  (Max X) / (X Cells) =
   */
+
+  var cellSize = calculateCellSize(maze_max_X, maze_max_Y);
+
+  console.log(cellSize);
+}
+
+
+const calculateCellSize = function(maze_max_X, maze_max_Y){
+  var max_X_dimensions = (mazeCanvas.width - 20)/maze_max_X;
+  var max_Y_dimensions = (mazeCanvas.height - 20)/maze_max_Y;
+  return Math.min(max_X_dimensions, max_Y_dimensions)
 }
