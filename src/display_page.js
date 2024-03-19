@@ -56,28 +56,28 @@ const display_MazeLoad = function (maze_max_X, maze_max_Y){
 
   //first locations
   ctx.moveTo(10,10);
-  ctx.lineTo(mazeCanvas.width - 10, 10)
+  ctx.lineTo(cellSize * maze_max_X + 10, 10)
   ctx.moveTo(10,10);
-  ctx.lineTo(10, mazeCanvas.height - 10)
+  ctx.lineTo(10, cellSize * maze_max_Y + 10)
   ctx.moveTo(10,10);
 
   //Draw maze
   fullCellMaze.forEach((cell, i) => {
     //Move to bottom Left
-    ctx.moveTo((cell.x_coord - 1) * cellSize, cell.y_coord * cellSize);
+    ctx.moveTo((cell.x_coord - 1) * cellSize + 10, cell.y_coord * cellSize + 10);
 
     //Draw/Move to bottom Right
     if (cell.bottomWall){
-      ctx.lineTo(cell.x_coord * cellSize, cell.y_coord * cellSize);
+      ctx.lineTo(cell.x_coord * cellSize + 10, cell.y_coord * cellSize + 10);
     } else {
-      ctx.moveTo(cell.x_coord * cellSize, cell.y_coord * cellSize);
+      ctx.moveTo(cell.x_coord * cellSize + 10, cell.y_coord * cellSize + 10);
     }
 
     //Draw/Move to Top Right
     if (cell.rightWall){
-      ctx.lineTo(cell.x_coord * cellSize, (cell.y_coord - 1) * cellSize);
+      ctx.lineTo(cell.x_coord * cellSize + 10, (cell.y_coord - 1) * cellSize + 10);
     } else {
-      ctx.moveTo(cell.x_coord * cellSize, (cell.y_coord - 1) * cellSize);
+      ctx.moveTo(cell.x_coord * cellSize + 10, (cell.y_coord - 1) * cellSize + 10);
     }
   });
 
