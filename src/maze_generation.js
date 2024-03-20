@@ -23,13 +23,15 @@ const loadNewMaze = function(x, y){
   max_X = x;
   max_Y = y;
 
-  cellStack = [];
-  fullCellMaze = [];
+  if (x*y < 4000) {
+    cellStack = [];
+    fullCellMaze = [];
 
-  let initialCell = new MazeCell(1, 1, true, true);
-  addNewCellToArray(initialCell);
+    let initialCell = new MazeCell(1, 1, true, true);
+    addNewCellToArray(initialCell);
 
-  display_MazeLoad(max_X, max_Y);
+    display_MazeLoad(max_X, max_Y);
+  }
 }
 
 
