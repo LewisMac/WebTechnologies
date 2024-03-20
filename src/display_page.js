@@ -83,7 +83,7 @@ const display_MazeLoad = function (maze_max_X, maze_max_Y){
 
 
 const calculateCellSize = function(maze_max_X, maze_max_Y){
-  var max_X_dimensions = (document.getElementById("mainBlock").width - 20)/maze_max_X;
-  var max_Y_dimensions = (document.getElementById("mainBlock").height - 20)/maze_max_Y;
+  var max_X_dimensions = (document.getElementById("mainBlock").offsetWidth - 20)/maze_max_X;
+  var max_Y_dimensions = (document.getElementById("mainBlock").offsetHeight - 20)/maze_max_Y;
   return Math.min(max_X_dimensions, max_Y_dimensions)
 }
