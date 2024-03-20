@@ -170,10 +170,21 @@ const checkValidDirection = function(cell){
 
 
 const rotateMovementDirection = function(cell){
-  // Rotate clockwise
-  if (cell.direction == 4){
-    cell.direction = 1;
-  } else {
-    cell.direction += 1;
+  if (cell.rotationDirection == null){
+    cell.rotationDirection = Math.round(Math.random())
+  } else if (cell.rotationDirection == 1){
+    // Rotate clockwise
+    if (cell.direction == 4){
+      cell.direction = 1;
+    } else {
+      cell.direction += 1;
+    }
+  } else if (cell.rotationDirection == 0){
+    // Rotate anti-clockwise
+    if (cell.direction == 1){
+      cell.direction = 4;
+    } else {
+      cell.direction -= 1;
+    }
   }
 }

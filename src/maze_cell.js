@@ -6,6 +6,7 @@ function MazeCell(x, y, rightWall, bottomWall) {
   this.direction = 0;
   this.timesRotated = 0;
   this.lastCell;
+  this.rotationDirection;
   /* Store here all directions of cell Walls, then we can just draw them
   Default as wall = true, then set to false if we pass through
   Maybe just the bottom and right? Then the full top and left are walls too
