@@ -32,11 +32,11 @@ main {
  border-color: "black";
 }
 nav {
- flex: 0 0 180px;
+ flex:0.5;
  padding: 0 10px;
  order: -1;
 }
 aside {
- flex: 0 0 130px;
+ flex: 0.5;
  padding: 0 10px;
 }
