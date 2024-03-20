@@ -29,8 +29,8 @@ const display_MazeLoad = function (maze_max_X, maze_max_Y){
     canvasHeight = minCanvasSizeSquare;
   }
 
-  ctx.canvas.width = canvasWidth + 10;
-  ctx.canvas.height = canvasHeight + 10;
+  ctx.canvas.width = canvasWidth + 20;
+  ctx.canvas.height = canvasHeight + 20;
 
   ctx.fillStyle = 'black';
   /*
