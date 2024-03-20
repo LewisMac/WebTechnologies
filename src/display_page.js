@@ -12,11 +12,6 @@ const ctx = mazeCanvas.getContext("2d");
 const minCanvasSizeSquare = 400;
 
 
-const display_reloadMaze = function(event){
-  console.log("Testing form action");
-}
-
-
 const display_MazeLoad = function (maze_max_X, maze_max_Y){
   /*
   This method is for updating the Canvas element with any new maze generated
