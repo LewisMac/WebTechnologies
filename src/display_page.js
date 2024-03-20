@@ -10,6 +10,16 @@ const mazeCanvas = document.getElementById("MazeCanvas");
 const ctx = mazeCanvas.getContext("2d");
 
 const minCanvasSizeSquare = 400;
+var maze_x, maze_y;
+
+
+window.on("resize", draw);
+
+
+const draw = function(){
+  display_MazeLoad(maze_x, maze_y);
+}
+
 
 const display_MazeLoad = function (maze_max_X, maze_max_Y){
   /*
@@ -18,6 +28,8 @@ const display_MazeLoad = function (maze_max_X, maze_max_Y){
   fit on the screen properly at any (Reasonable) size maze
   We could also calculate the centre of the maze, and scale out from there?
   */
+  maze_x = maze_max_X;
+  maze_y = maze_max_Y;
   var canvasWidth = calculateCellSize(maze_max_X, maze_max_Y) * maze_max_X;
   var canvasHeight = calculateCellSize(maze_max_X, maze_max_Y) * maze_max_Y;
 

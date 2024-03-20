@@ -33,7 +33,6 @@ main {
  border-color: "black";
 }
 #MazeCanvas {
-  flex: 1;
   min-width: 400
   padding: 0 10px;
 }
