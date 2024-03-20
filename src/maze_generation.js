@@ -23,6 +23,9 @@ const loadNewMaze = function(x, y){
   max_X = x;
   max_Y = y;
 
+  cellStack = [];
+  fullCellMaze = [];
+
   let initialCell = new MazeCell(1, 1, true, true);
   addNewCellToArray(initialCell);
 
