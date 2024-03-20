@@ -32,6 +32,11 @@ main {
  border-style: solid;
  border-color: "black";
 }
+#MazeCanvas {
+  flex: 1;
+  min-width: 400
+  padding: 0 10px;
+}
 nav {
  flex:0.5;
  padding: 0 10px;
