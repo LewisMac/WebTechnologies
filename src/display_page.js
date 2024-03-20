@@ -13,9 +13,6 @@ const minCanvasSizeSquare = 400;
 var maze_x, maze_y;
 
 
-window.on("resize", draw);
-
-
 const draw = function(){
   display_MazeLoad(maze_x, maze_y);
 }

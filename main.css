@@ -25,6 +25,7 @@ body {
  flex: 1;
 }
 main {
+ display: flex;
  flex: 1;
  min-width: 420
  padding: 0 20px;
@@ -33,6 +34,7 @@ main {
  border-color: "black";
 }
 #MazeCanvas {
+  flex: 1;
   min-width: 400
   padding: 0 10px;
 }
