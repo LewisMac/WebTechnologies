@@ -45,3 +45,10 @@ aside {
  flex: 0.5;
  padding: 0 10px;
 }
+footer {
+ font-size: medium;
+ text-align: center;
+ padding: 0.3em 0;
+ background-color: #F2EDED;
+ color: #1C1C1C;
+}
