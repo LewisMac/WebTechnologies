@@ -23,7 +23,7 @@ const loadNewMaze = function(x, y){
   max_X = x;
   max_Y = y;
 
-  if (x*y < 4000) {
+  if (x*y < 2501) {
     cellStack = [];
     fullCellMaze = [];
 
