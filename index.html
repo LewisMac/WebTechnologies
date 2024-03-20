@@ -4,10 +4,18 @@
     <title>Uni Project</title>
   </head>
   <body>
-    <p>
-      Game idea: <br>
-      Generating a Maze for D&D use
-    </p>
+    <header>
+      <h1 id="pageHeader">Maze Generator</h1>
+      <h3 id="nameHeader">By Lewis MacNee</h3>
+    </header>
+    <form action="javascript:;" onsubmit="display_reloadMaze(this)">
+      <!-- This section is for all the inputs for changing the default maze -->
+      <label for="xValue">Input Width of Maze:</label>
+      <input type="number" id="xValue" name="xValue" value="5">
+      <label for="yValue">Input Height of Maze:</label>
+      <input type="number" name="yValue" name="yValue "value="5">
+      <input type="submit" id="submit">
+    </form>
     <canvas id="MazeCanvas"></canvas>
   </body>
   <!--
