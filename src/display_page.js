@@ -33,9 +33,6 @@ const display_MazeLoad = function (maze_max_X, maze_max_Y){
   ctx.canvas.width = canvasWidth;
   ctx.canvas.height = canvasHeight;
 
-  ctx.fillStyle = 'grey';
-  ctx.fillRect(0, 0, mazeCanvas.width, mazeCanvas.height)
-
   ctx.fillStyle = 'black';
   /*
   use ctx.moveTo for any 'gaps'
