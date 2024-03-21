@@ -12,9 +12,24 @@ const ctx = mazeCanvas.getContext("2d");
 const minCanvasSizeSquare = 400;
 var maze_x, maze_y;
 
+var fullMazeDrawn;
+
 
 const draw = function(){
   display_MazeLoad(maze_x, maze_y);
+}
+
+
+//Access maze generated on multiple pages
+const unloadPage = function(){
+  const mazeJSON = JSON.stringify(fullCellMaze);
+  sessionStorage.setitem('FullMaze', mazeJSON);
+}
+
+
+const loadPage = function(){
+  const mazeJSON = sessionStorage.getItem('FullMaze');
+  fullMazeDrawn = JSON.parse(mazeJSON);
 }
 
 
