@@ -8,7 +8,7 @@ body {
 .container {
   display: flex;
   flex: 1;
-  max-height: 75%;
+  max-height: 75vh;
 }
 header{
   height: 20%;
