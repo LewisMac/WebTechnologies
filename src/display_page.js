@@ -30,6 +30,7 @@ const unloadPage = function(){
 const loadPage = function(){
   const mazeJSON = sessionStorage.getItem('FullMaze');
   fullMazeDrawn = JSON.parse(mazeJSON);
+  draw();
 }
 
 

@@ -36,6 +36,7 @@ main {
 #MazeCanvas {
   flex: 1;
   min-width: 400px;
+  min-height: 400px;
   padding: 0 10px;
 }
 nav {
