@@ -23,7 +23,7 @@ const draw = function(){
 //Access maze generated on multiple pages
 const unloadPage = function(){
   const mazeJSON = JSON.stringify(fullCellMaze);
-  sessionStorage.setitem('FullMaze', mazeJSON);
+  sessionStorage.setItem('FullMaze', mazeJSON);
 }
 
 
