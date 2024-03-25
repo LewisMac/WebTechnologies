@@ -22,7 +22,7 @@ const draw = function(){
 
 //Access maze generated on multiple pages
 const unloadPage = function(){
-  let transfer_array = [x_value: maze_x, y_value: maze_y, maze_values = fullCellMaze]
+  let transfer_array = {x_value: maze_x, y_value: maze_y, maze_values: fullCellMaze}
   const mazeJSON = JSON.stringify(transfer_array);
   sessionStorage.setItem('FullMaze', mazeJSON);
 }
