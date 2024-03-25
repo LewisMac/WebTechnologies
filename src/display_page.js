@@ -12,7 +12,7 @@ const ctx = mazeCanvas.getContext("2d");
 const minCanvasSizeSquare = 400;
 var maze_x, maze_y;
 
-var fullMazeDrawn;
+var fullCellMaze;
 
 
 const draw = function(){
@@ -29,7 +29,7 @@ const unloadPage = function(){
 
 const loadPage = function(){
   const mazeJSON = sessionStorage.getItem('FullMaze');
-  fullMazeDrawn = JSON.parse(mazeJSON);
+  fullCellMaze = JSON.parse(mazeJSON);
   draw();
 }
 
