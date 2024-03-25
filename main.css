@@ -19,7 +19,7 @@ main {
   display: flex;
   flex: 1;
   min-width: 420px;
-  max-width: 50%;
+  max-width: 75vh;
   min-height: 420px;
   max-height: 75%;
   padding: 0 10px;
