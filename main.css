@@ -37,14 +37,10 @@ main {
 #MazeCanvas {
   flex: 1 0 auto;
   height: auto;
+  width: auto;
   min-width: 400px;
   min-height: 400px;
   padding: 0 10px;
-}
-#MazeCanvas:before {
-    content: '';
-    display: block;
-    padding-top: 100%;
 }
 nav {
  flex:0.5;
