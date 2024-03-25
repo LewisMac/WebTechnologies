@@ -22,14 +22,18 @@ const draw = function(){
 
 //Access maze generated on multiple pages
 const unloadPage = function(){
-  const mazeJSON = JSON.stringify(fullCellMaze);
+  let transfer_array = [x_value: maze_x, y_value: maze_y, maze_values = fullCellMaze]
+  const mazeJSON = JSON.stringify(transfer_array);
   sessionStorage.setItem('FullMaze', mazeJSON);
 }
 
 
 const loadPage = function(){
   const mazeJSON = sessionStorage.getItem('FullMaze');
-  fullCellMaze = JSON.parse(mazeJSON);
+  transfer_array = JSON.parse(mazeJSON);
+  maze_x = transfer_array.x_value;
+  maze_y = transfer_array.y_value;
+  fullCellMaze = transfer_array.maze_values;
   draw();
 }
 

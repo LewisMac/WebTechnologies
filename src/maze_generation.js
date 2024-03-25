@@ -13,11 +13,7 @@ var cellStack = [];
 var fullCellMaze = [];
 var max_X;
 var max_Y;
-/*
-window.onload = function(){
-  loadNewMaze(5,5)
-}
-*/
+
 
 const loadNewMaze = function(x, y){
   max_X = x;
