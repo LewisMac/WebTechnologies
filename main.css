@@ -8,6 +8,7 @@ body {
 header{
  font-size: large;
  text-align: center;
+ height: 20vh
  padding: 0.3em 0;
  background-color: #F2EDED;
  color: #1C1C1C;
@@ -28,7 +29,7 @@ main {
  min-width: 420px;
  max-width: 50%;
  min-height: 420px;
- max-height: 70vh;
+ height: 70vh;
  padding: 0 20px;
  border-width: 2px;
  border-style: solid;
@@ -40,7 +41,7 @@ main {
   width: auto;
   min-width: 400px;
   min-height: 400px;
-  padding: 0 10px;
+  padding: 10px;
 }
 nav {
  flex:0.5;
@@ -57,5 +58,5 @@ footer {
  padding: 0.3em 0;
  background-color: #F2EDED;
  color: #1C1C1C;
- max-height: 10vh;
+ height: 10vh;
 }
