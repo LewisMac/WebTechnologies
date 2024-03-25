@@ -1,39 +1,30 @@
 body {
- margin: 0;
- padding: 0;
- max-width: inherit;
- background: #FFF9F9;
- color: #1C1C1C
-}
-header{
- font-size: large;
- text-align: center;
- height: 20vh
- padding: 0.3em 0;
- background-color: #F2EDED;
- color: #1C1C1C;
- max-height: 20vh;
-}
-body {
- min-height: 100vh;
- display: flex;
- flex-direction: column;
+  margin: 0;
+  padding: 0;
+  max-width: inherit;
+  display: flex;
+  flex-direction: column;
 }
 .container {
- display: flex;
- flex: 1;
+  display: flex;
+  flex: 1;
+}
+header{
+  height: 20%;
+  font-size: large;
+  text-align: center;
 }
 main {
- display: flex;
- flex: 1;
- min-width: 420px;
- max-width: 50%;
- min-height: 420px;
- height: 70vh;
- padding: 0 20px;
- border-width: 2px;
- border-style: solid;
- border-color: "grey";
+  display: flex;
+  flex: 1;
+  min-width: 420px;
+  max-width: 50%;
+  min-height: 420px;
+  height: 75%;
+  padding: 0 10px;
+  border-width: 2px;
+  border-style: solid;
+  border-color: "grey";
 }
 #MazeCanvas {
   flex: 1 0 auto;
@@ -43,20 +34,15 @@ main {
   min-height: 400px;
   padding: 10px;
 }
-nav {
- flex:0.5;
- padding: 0 10px;
- order: -1;
+config_maze {
+  flex:0.5;
+  order: -1;
 }
 aside {
- flex: 0.5;
- padding: 0 10px;
+  flex: 0.5;
 }
 footer {
- font-size: medium;
- text-align: center;
- padding: 0.3em 0;
- background-color: #F2EDED;
- color: #1C1C1C;
- height: 10vh;
+  height: 5%;
+  font-size: medium;
+  text-align: center;
 }

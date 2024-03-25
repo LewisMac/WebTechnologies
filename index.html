@@ -10,7 +10,7 @@
       <h3 id="nameHeader">By Lewis MacNee</h3>
     </header>
     <div class="container">
-      <nav>
+      <config_maze>
         <form action="javascript:;" onsubmit="loadNewMaze(
           this.elements['xValue'].value,
           this.elements['yValue'].value)">
@@ -21,7 +21,7 @@
           <input type="number" name="yValue" name="yValue "value="5"><br>
           <input type="submit" id="submit">
         </form>
-      </nav>
+      </config_maze>
       <main id="mainBlock">
         <canvas id="MazeCanvas"></canvas>
       </main>
@@ -31,21 +31,6 @@
     </div>
     <footer></footer>
   </body>
-  <!--
-  <script type="text/javascript">
-    const TopLevelCanvas = document.getElementById("TopLevelCanvas");
-    const MidLevelCanvas = document.getElementById("MidLevelCanvas");
-    const LowLevelCanvas = document.getElementById("LowLevelCanvas");
-
-    const ctxTop = TopLevelCanvas.getContext("2d");
-    const ctxMid = MidLevelCanvas.getContext("2d");
-    const ctxLow = LowLevelCanvas.getContext("2d");
-
-    ctxTop.fillText("Hello World", 10, 50);
-    ctxTop.fillText("Testing Layers", 10, 50);
-    ctxTop.fillText("Hope these look weird", 10, 50);
-  </script>
-  -->
 
   <script src='src/maze_generation.js'></script>
   <script src='src/maze_cell.js'></script>
