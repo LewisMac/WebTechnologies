@@ -27,6 +27,7 @@ main {
  flex: 1;
  min-width: 420px;
  max-width: 50%;
+ min-height: 420px;
  max-height: 70vh;
  padding: 0 20px;
  border-width: 2px;
@@ -34,10 +35,16 @@ main {
  border-color: "grey";
 }
 #MazeCanvas {
-  flex: 1;
+  flex: 1 0 auto;
+  height: auto;
   min-width: 400px;
   min-height: 400px;
   padding: 0 10px;
+}
+#MazeCanvas:before {
+    content: '';
+    display: block;
+    padding-top: 100%;
 }
 nav {
  flex:0.5;
