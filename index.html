@@ -12,8 +12,8 @@
     <div class="container">
       <config_maze>
         <form action="javascript:;" onsubmit="loadNewMaze(
-          this.elements['xValue'].value,
-          this.elements['yValue'].value)">
+        this.elements['xValue'].value,
+        this.elements['yValue'].value)">
           <!-- This section is for all the inputs for changing the default maze -->
           <label for="xValue">Input Width of Maze:</label><br>
           <input type="number" id="xValue" name="xValue" value="5"><br>
@@ -23,7 +23,9 @@
         </form>
       </config_maze>
       <main id="mainBlock">
-        <canvas id="MazeCanvas"></canvas>
+        <canvas id="MazeCanvas" onload="loadNewMaze(
+        this.elements['xValue'].value,
+        this.elements['yValue'].value)"></canvas>
       </main>
       <aside>
         <p id="description">Generate a maze, if nothing happens, try a smaller one first</p>
