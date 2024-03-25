@@ -28,8 +28,8 @@ main {
 }
 #MazeCanvas {
   flex: 1 0 auto;
-  height: auto;
-  width: auto;
+  height: 90%;
+  width: 90%;
   min-width: 400px;
   min-height: 400px;
   padding: 10px;
@@ -37,9 +37,11 @@ main {
 config_maze {
   flex:0.5;
   order: -1;
+  padding: 10px;
 }
 aside {
   flex: 0.5;
+  padding: 10px;
 }
 footer {
   height: 5%;
